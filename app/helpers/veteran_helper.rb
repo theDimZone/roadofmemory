@@ -1,0 +1,2 @@
+module VeteranHelper
+end
