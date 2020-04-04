@@ -24,6 +24,9 @@
  * Dummy devices (replace them with your own or something else entirely!)
  */
 
+.position-relative { // двигает заголовок
+  right: 7%;
+}
 .product-device {
   position: absolute;
   right: 10%;
@@ -72,3 +75,5 @@
 }
 
 .overflow-hidden { overflow: hidden; }
+
+
