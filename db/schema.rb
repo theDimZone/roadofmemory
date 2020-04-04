@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_04_140838) do
+ActiveRecord::Schema.define(version: 2020_04_04_172838) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,11 +25,15 @@ ActiveRecord::Schema.define(version: 2020_04_04_140838) do
   end
 
   create_table "troops", force: :cascade do |t|
-    t.string "type"
+    t.string "trooptype"
     t.string "name"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "troop_id"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_troops_on_ancestry"
+    t.index ["troop_id"], name: "index_troops_on_troop_id"
   end
 
   create_table "user_veterans", force: :cascade do |t|
@@ -49,6 +53,9 @@ ActiveRecord::Schema.define(version: 2020_04_04_140838) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "socialid"
+    t.string "ancestry"
+    t.index ["ancestry"], name: "index_users_on_ancestry"
     t.index ["user_id"], name: "index_users_on_user_id"
   end
 
@@ -64,6 +71,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_140838) do
 
   add_foreign_key "troop_veterans", "troops"
   add_foreign_key "troop_veterans", "veterans"
+  add_foreign_key "troops", "troops"
   add_foreign_key "user_veterans", "users"
   add_foreign_key "user_veterans", "veterans"
   add_foreign_key "users", "users"
