@@ -1,10 +1,14 @@
-.container {
+/*.container {
   max-width: 960px;
 }
 
 /*
  * Custom translucent site header
  */
+
+
+
+
 
 .site-header {
   background-color: rgba(0, 0, 0, .85);
@@ -24,7 +28,7 @@
  * Dummy devices (replace them with your own or something else entirely!)
  */
 
-.product-device {
+/*.product-device {
   position: absolute;
   right: 10%;
   bottom: -30%;
@@ -38,7 +42,7 @@
 
 .product-device::before {
   position: absolute;
-  top: 10%;
+  top: 25%;
   right: 10px;
   bottom: 10%;
   left: 10px;
@@ -47,8 +51,8 @@
   border-radius: 5px;
 }
 
-.product-device-2 {
-  top: -25%;
+/*.product-device-2 {
+  top: -40%;
   right: auto;
   bottom: 0;
   left: 5%;
