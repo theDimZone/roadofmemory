@@ -3,7 +3,13 @@
 <div>
 
   <a class="m-3 p-3">Имя Пользователя :</a>
-  <a href="https://vk.com/id<%= @user.socialid %>"><%= @user.name %></a>
+  <br>
+  <% if @user.socialtype == "vk" %>
+    <a href="https://vk.com/id<%= @user.socialid %>"><%= @user.name %></a>
+  <% elsif @user.socialtype == "od" %>
+    ....
+  <% end %>
+  <br>
 </div>
 
 <br>
