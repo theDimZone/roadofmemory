@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/login/get_token/', to: 'login#get_token'
   get '/', to: 'index#index'
   get '/veteran/add', to: 'veteran#add'
-  get '/veteran/:id', to: 'veteran#index'
+  get '/veteran/:id', to: 'veteran#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
