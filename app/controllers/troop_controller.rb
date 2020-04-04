@@ -4,7 +4,7 @@ class TroopController < ApplicationController
   end
 
   def index
-    @troops = Troop.where(parent_id: nil)
+    @troops = Troop.where(ancestry: nil)
   end
 
   def new
