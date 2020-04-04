@@ -4,7 +4,11 @@ class VeteranController < ApplicationController
 
   end
 
-  def add
+  def new
+
+  end
+
+  def create
 
   end
 end

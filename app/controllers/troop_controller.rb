@@ -5,6 +5,9 @@ class TroopController < ApplicationController
   def index
   end
 
-  def add
+  def new
+  end
+
+  def create
   end
 end
