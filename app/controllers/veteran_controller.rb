@@ -3,4 +3,8 @@ class VeteranController < ApplicationController
       @veteran = Veteran.find(params[:id])
 
   end
+
+  def add
+
+  end
 end
