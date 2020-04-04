@@ -1,7 +1,17 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1 class="m-3 p-3">Личный кабинет</h1>
 
-<%= @user.name %>
+<div>
+
+  <a class="m-3 p-3">Имя Пользователя :</a>
+  <br>
+  <% if @user.socialtype == "vk" %>
+    <a href="https://vk.com/id<%= @user.socialid %>"><%= @user.name %></a>
+  <% elsif @user.socialtype == "od" %>
+    ....
+  <% end %>
+  <br>
+</div>
+
 <br>
 <% if @user.socialtype == "vk" %>
   <a href="https://vk.com/id<%= @user.socialid %>" target="_blank">vk</a>
