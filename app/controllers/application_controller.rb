@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_authored
-    return cookies[:id].nil?
+    return cookies[:id] != nil
   end
 
 
