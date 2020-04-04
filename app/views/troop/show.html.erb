@@ -1,2 +1,28 @@
 <h1>Troop#show</h1>
 <p>Find me in app/views/troop/show.html.erb</p>
+
+name <%= @troop.name %>
+<br>
+type <%= @troop.trooptype %>
+<br>
+desc:<br>
+<%= @troop.description %>
+<br>
+
+veterans:<br>
+<% @troop.veterans.each_with_index do |veteran, i| %>
+  <%= link_to veteran.lastname + " " + veteran.name + " " + veteran.surname, controller: "veteran", action: "show", id: veteran.id %>
+  <% if i != @troop.veterans.count - 1 %>
+  ,
+  <% end %>
+<% end %>
+<br>
+
+<% unless @troop.parent.nil? %>
+parent troop:<%= link_to @troop.parent.name, controller: "troop", action: "show", id: @troop.parent.id %><br>
+<% end %>
+
+troops:<br>
+<% @troop.children.each do |troop| %>
+  <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
+<% end %>
