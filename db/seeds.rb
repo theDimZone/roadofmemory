@@ -31,17 +31,17 @@ p "Troops"
 p Troop.all
 
 Troop.where(:id => 2).first.veterans.create(:id => 1, :name => "Test", :lastname => "Testlast", :surname => "Testsur")
-Troop.where(:name => "Армия 123").first.veterans.create(:id => 2, :name => "Test2", :lastname => "Testlast2", :surname => "Testsur2")
-Troop.where(:name => "Армия 123").first.veterans.create(:id => 3, :name => "Test3", :lastname => "Testlast3", :surname => "Testsur3")
-Troop.where(:name => "Армия 123").first.veterans.create(:id => 4, :name => "Test4", :lastname => "Testlast4", :surname => "Testsur4")
+Troop.where(:name => "Армия 123").first.veterans.create(:id => 2, :name => "Test2", :lastname => "Testlast2", :surname => "Testsur2", :moderated => true)
+Troop.where(:name => "Армия 123").first.veterans.create(:id => 3, :name => "Test3", :lastname => "Testlast3", :surname => "Testsur3", :moderated => true)
+Troop.where(:name => "Армия 123").first.veterans.create(:id => 4, :name => "Test4", :lastname => "Testlast4", :surname => "Testsur4", :moderated => true)
 
 #Veteran.create(:id => 1, :name => "Test", :lastname => "Testlast", :surname => "Testsur", :parent => Troop.where(:id => 2).first)
 #Veteran.create(:id => 2, :name => "Test2", :lastname => "Testlast2", :surname => "Testsur2", :parent => Troop.where(:name => "Армия 123").first)
 #Veteran.create(:id => 3, :name => "Test3", :lastname => "Testlast3", :surname => "Testsur3", :parent => Troop.where(:name => "Армия 123").first)
 #Veteran.create(:id => 4, :name => "Test4", :lastname => "Testlast4", :surname => "Testsur4", :parent => Troop.where(:name => "Армия 123").first)
 
-Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:id => 5, :name => "Test5", :lastname => "Testlast5", :surname => "Testsur5")
-Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:id => 6, :name => "Test6", :lastname => "Testlast6", :surname => "Testsur6")
+Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:id => 5, :name => "Test5", :lastname => "Testlast5", :surname => "Testsur5", :moderated => true)
+Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:id => 6, :name => "Test6", :lastname => "Testlast6", :surname => "Testsur6", :moderated => true)
 
 p "Veterans"
 p Veteran.all
