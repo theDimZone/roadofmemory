@@ -1,2 +1,14 @@
 <h1>Troop#show</h1>
 <p>Find me in app/views/troop/show.html.erb</p>
+
+name <%= @troop.name %>
+<br>
+type <%= @troop.trooptype %>
+<br>
+desc:<br>
+<%= @troop.description %>
+<br>
+veterans:<br>
+<% @troop.veterans.each do |veteran| %>
+  <%= link_to veteran.lastname + " " + veteran.name + " " + veteran.surname, controller: "veteran", action: "show", id: veteran.id %>
+<% end %>

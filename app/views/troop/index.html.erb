@@ -1,2 +1,10 @@
 <h1>Troop#index</h1>
 <p>Find me in app/views/troop/index.html.erb</p>
+
+
+<% @troops.each_with_index do |troop, i| %>
+  <% if troop.parent.nil? %>
+      <%= render partial: "troop/partials/showtroop", locals: { parent_troop: troop, index: i, count: @troops.count} %>
+    <br>
+  <% end %>
+<% end %>
