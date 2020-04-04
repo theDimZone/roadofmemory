@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  socialtoken: MyString
+  socialtype: MyString
+  score: 1
+  name: MyString
+  user: one
+
+two:
+  socialtoken: MyString
+  socialtype: MyString
+  score: 1
+  name: MyString
+  user: two
