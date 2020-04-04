@@ -27,17 +27,17 @@
 .position-relative { // двигает заголовок
   right: 7%;
 }
-.product-device {
-  position: absolute;
-  right: 10%;
-  bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
-  border-radius: 21px;
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
-}
+// .product-device {
+//   position: absolute;
+//   right: 10%;
+//   bottom: -30%;
+//   width: 300px;
+//   height: 540px;
+//   background-color: #333;
+//   border-radius: 21px;
+//   -webkit-transform: rotate(30deg);
+//   transform: rotate(30deg);
+// }
 
 .product-device::before {
   position: absolute;
@@ -56,6 +56,11 @@
   bottom: 0;
   left: 5%;
   background-color: #e5e5e5;
+}
+
+.marg-veteran {
+  margin: 20px;
+  padding: 20px;
 }
 
 
