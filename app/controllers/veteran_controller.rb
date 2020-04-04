@@ -1,5 +1,5 @@
 class VeteranController < ApplicationController
-  def index
+  def show
       @veteran = Veteran.find(params[:id])
 
   end
