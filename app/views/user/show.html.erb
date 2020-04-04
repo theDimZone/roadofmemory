@@ -1,5 +1,5 @@
 <h1 class="m-3 p-3">Личный кабинет</h1>
-<div class="container w-50 m-3 p-3">
+<div class="container w-50 m-3 p-3 bg-light">
 <div class="row">
   <div class="col">
   <h2 class="">Информация</h2>
@@ -9,9 +9,13 @@
     <% elsif @user.socialtype == "od" %>
       ....
     <% end %>
+    <br>
+    <a class="">Накопленные баллы :</a>
+    <a><%= @user.score %></a>
+    </br>
   </div>
   <div class="class=col">
-  <a class="">Приглашенные друзья:</a>
+  <a class="m-3 p-3">Приглашенные друзья:</a>
 
   <div class="m-3 p-3">
     <% @user.children.each do |user| %>
