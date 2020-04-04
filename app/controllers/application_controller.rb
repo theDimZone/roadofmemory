@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
   require 'digest/md5'
+  before :check_auth
+
   def is_cookie_valid_vk
     #конфиг пока здесь..
     app_id = "7391635"
@@ -15,4 +17,8 @@ class ApplicationController < ActionController::Base
     return cookies[:id].nil?
   end
 
+
+  def check_auth
+
+  end
 end
