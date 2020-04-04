@@ -24,65 +24,12 @@
   text-decoration: none;
 }
 
-/*
- * Dummy devices (replace them with your own or something else entirely!)
- */
-
-
-// .position-relative { // двигает заголовок
-//   right: 7%;
-/*.product-device {
-  position: absolute;
-  right: 10%;
-  bottom: -30%;
-  width: 300px;
-  height: 540px;
-  background-color: #333;
-  border-radius: 21px;
-  -webkit-transform: rotate(30deg);
-  transform: rotate(30deg);
->>>>>>> 3e45dfcb2afb6c4731aa72b9884d403bc7aa05ec
-}
-// .product-device {
-//   position: absolute;
-//   right: 10%;
-//   bottom: -30%;
-//   width: 300px;
-//   height: 540px;
-//   background-color: #333;
-//   border-radius: 21px;
-//   -webkit-transform: rotate(30deg);
-//   transform: rotate(30deg);
-// }
-
-.product-device::before {
-  position: absolute;
-  top: 25%;
-  right: 10px;
-  bottom: 10%;
-  left: 10px;
-  content: "";
-  background-color: rgba(255, 255, 255, .1);
-  border-radius: 5px;
-}
-
-/*.product-device-2 {
-  top: -40%;
-  right: auto;
-  bottom: 0;
-  left: 5%;
-  background-color: #e5e5e5;
-}
 
 .marg-veteran {
   margin: 20px;
   padding: 20px;
 }
 
-
-/*
- * Extra utilities
- */
 
 .flex-equal > * {
   -ms-flex: 1;
