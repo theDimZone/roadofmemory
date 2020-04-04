@@ -1,25 +1,24 @@
 <h1 class="m-3 p-3">Личный кабинет</h1>
+<div class="container w-50 m-3 p-3">
+<div class="row">
+  <div class="col">
+  <h2 class="">Информация</h2>
+    <a class="">Имя пользователя :</a>
+    <% if @user.socialtype == "vk" %>
+      <a href="https://vk.com/id<%= @user.socialid %>"><%= @user.name %></a>
+    <% elsif @user.socialtype == "od" %>
+      ....
+    <% end %>
+  </div>
+  <div class="class=col">
+  <a class="">Приглашенные друзья:</a>
 
-<div>
+  <div class="m-3 p-3">
+    <% @user.children.each do |user| %>
+      <%= link_to user.name, controller: "user", action: "show", id: user.id %>
+    <% end %>
+  </div>
 
-  <a class="m-3 p-3">Имя Пользователя :</a>
-  <br>
-  <% if @user.socialtype == "vk" %>
-    <a href="https://vk.com/id<%= @user.socialid %>"><%= @user.name %></a>
-  <% elsif @user.socialtype == "od" %>
-    ....
-  <% end %>
-  <br>
+  </div>
 </div>
-
-<br>
-<% if @user.socialtype == "vk" %>
-  <a href="https://vk.com/id<%= @user.socialid %>" target="_blank">vk</a>
-<% elsif @user.socialtype == "od" %>
-  ....
-<% end %>
-<br>
-Рефералы:
-<% @user.children.each do |user| %>
-  <%= link_to user.name, controller: "user", action: "show", id: user.id %>
-<% end %>
+</div>
