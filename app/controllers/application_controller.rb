@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   require 'digest/md5'
-  before :check_auth
+  before_action :check_auth
 
   def is_cookie_valid_vk
     #конфиг пока здесь..
