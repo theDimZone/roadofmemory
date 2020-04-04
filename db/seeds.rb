@@ -14,7 +14,7 @@ User.destroy_all
 Troop.destroy_all
 
 User.create(id: 1, socialtype: "vk", socialid: "1", name: "Pavel Durov", score: 100000)
-User.create(:id => 2, :socialtype => "vk", :socialid => "2", :name => "XZ kto", score:450, :parent => User.first)
+User.create(:id => 2, :socialtype => "vk", :socialid => "2", :name => "XZ kto", :score => 450, :parent => User.first)
 
 p "Users"
 p User.all
