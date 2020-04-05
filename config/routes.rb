@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'login#index'
   get '/login/get_token/', to: 'login#get_token'
+  get '/login/get_token_od/', to: 'login#get_token_od'
 
   get '/', to: 'index#index'
   get '/:id', to: 'index#index'
