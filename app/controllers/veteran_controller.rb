@@ -23,18 +23,15 @@ class VeteranController < ApplicationController
     veteran_params[:moderated] = true
 
     unless troop_params[:id].nil?
-      @veteran = Troop.find(troop_params[:id]).veterans.new(veteran_params)
+      @veteran = Troop.find(troop_params[:id]).veterans.create(veteran_params)
     else
-      @veteran = Veteran.new(veteran_params)
+      @veteran = Veteran.create(veteran_params)
     end
     #veteran_params[:troop] = Troop.find(params[:id]) unless params[:id].nil?
     #@veteran = Veteran.new(veteran_params)
 
-    if @veteran.save
-      redirect_to :controller => 'veteran', :action => 'show', :id => @veteran.id
-     else
-      render action: 'new'
-    end
+    redirect_to :controller => 'veteran', :action => 'show', :id => @veteran.id
+
   end
 
 private
