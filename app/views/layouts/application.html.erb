@@ -14,10 +14,25 @@
       <div class="container-fluid">
         <div class="row" height="2em">
           <div class="col-md-5">
-            <a class="py-2 d-none d-md-inline-block" href="#"></a>
+            <%= link_to(
+            {
+              :controller => 'score',
+              :action => 'index'
+            },
+            {
+              :class=>"py-1 d-none d-md-inline-block"
+            }) do %>
+              <svg class="bi bi-gift-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10 1a1.5 1.5 0 00-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 009.96 3h.015L10 2.999l.025.002h.014A2.569 2.569 0 0010.293 3c.17-.006.387-.026.598-.073.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 0010 1zm0 3h-.006a3.535 3.535 0 01-.326 0 4.435 4.435 0 01-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 017.5 2.5a2.5 2.5 0 015 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.434 4.434 0 01-1.104.099H10z" clip-rule="evenodd"/>
+                <path fill-rule="evenodd" d="M6 1a1.5 1.5 0 00-1.5 1.5c0 .098.033.16.12.227.103.081.272.15.49.2A3.44 3.44 0 005.96 3h.015L6 2.999l.025.002h.014l.053.001a3.869 3.869 0 00.799-.076c.217-.048.386-.118.49-.199.086-.066.119-.13.119-.227A1.5 1.5 0 006 1zm0 3h-.006a3.535 3.535 0 01-.326 0 4.435 4.435 0 01-.777-.097c-.283-.063-.614-.175-.885-.385A1.255 1.255 0 013.5 2.5a2.5 2.5 0 015 0c0 .454-.217.793-.506 1.017-.27.21-.602.322-.885.385a4.435 4.435 0 01-1.103.099H6zm9 10.5V7H8.5v9h5a1.5     1.5 0 001.5<% %>1.5zM7.5 16h-5A1.5 1.5 0 011 14.5V7h6.5v9z" clip-rule="evenodd"/>
+                <path d="M0 4a1 1 0 011-1h14a1 1 0 011 1v1a1 1 0 01-1 1H1a1 1 0 01-1-1V4z"/>
+              </svg>
+            <% end %>
           </div>
+
           <div class="col-md-5">
-              <a class="py-2 d-none d-md-inline-block" href="/">Скованные одной целью</a>
+            <a class="py-2 d-none d-md-inline-block"
+            <%= link_to "Скованные одной целью", controller: "index", action: "index" %>/>
           </div>
           <div class="col-md-1">
             <%= link_to(
@@ -34,6 +49,7 @@
               </svg>
             <% end %>
           </div>
+
           <div class="col-md-1">
             <% if is_authored %>
               <%= link_to(
@@ -50,7 +66,6 @@
                   <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                   <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
                 </svg>
-
               <% end %>
             <% else %>
               <%= link_to(
@@ -66,7 +81,6 @@
                   <path fill-rule="evenodd" d="M8 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                   <path fill-rule="evenodd" d="M8 1a7 7 0 100 14A7 7 0 008 1zM0 8a8 8 0 1116 0A8 8 0 010 8z" clip-rule="evenodd"/>
                 </svg>
-
               <% end %>
             <% end %>
           </div>
