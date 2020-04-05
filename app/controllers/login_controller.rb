@@ -24,7 +24,7 @@ class LoginController < ApplicationController
     redirect_to :controller => 'user', :action => 'show', :id => user.id
   end
 
-  def get_token_Od
+  def get_token_od
     hash = params[:hash]
     userid = params[:uid]
     name = params[:first_name] + " " + params[:last_name]

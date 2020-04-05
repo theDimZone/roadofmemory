@@ -4,11 +4,11 @@ class UserController < ApplicationController
   end
 
   def signout
-    cookies.permanent[:hash] = ""
-    cookies.permanent[:id] = ""
-    cookies.permanent[:socialid] = ""
-    cookies.permanent[:socialtype] = ""
-    cookies.permanent[:name] = ""
+    cookies.delete :hash
+    cookies.delete :id
+    cookies.delete :socialid
+    cookies.delete :socialtype
+    cookies.delete :name
 
     redirect_to :controller => 'index', :action => 'index'
   end
