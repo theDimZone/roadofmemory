@@ -14,11 +14,36 @@ class ApplicationController < ActionController::Base
   end
 
   def is_authored
-    return cookies[:id] != nil
+    return get_user[:id] != nil
   end
 
 
   def check_auth
+    if Rails.env == "development"
+      return true
+    end
 
+    if cookies[:socialtype] == "vk"
+      return is_cookie_valid_vk
+    else
+      return false
+    end
+  end
+
+  def get_user
+    user = Hash.new
+    if Rails.env == "development"
+      user[:name] = "Pavel Durov"
+      user[:id] = 1
+      user[:socialid] = "1"
+      user[:socialtype] = "vk"
+    else
+      user[:name] = cookies[:name]
+      user[:id] = cookies[:id]
+      user[:socialid] = cookies[:socialid]
+      user[:socialtype] = cookies[:socialtype]
+    end
+
+    return user
   end
 end
