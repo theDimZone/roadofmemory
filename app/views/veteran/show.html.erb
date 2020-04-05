@@ -14,7 +14,7 @@ extra_css: "product.css"
     <% if @veteran.photo == nil %>
      <img src="/assets/1.png" width="300">
     <% else %>
-     <img src="<%= @veteran.photo %>" width="300">
+     <img src="<%= @veteran.photo.url %>" width="300">
     <% end %>
    </div>
    <div class="col">
@@ -50,12 +50,12 @@ extra_css: "product.css"
     <div class="my-3 py-3">
       <h2 class="display-5">Медали и награды</h2>
 
-      <%# <% pdf = WickedPdf.new.pdf_from_url(veteran_id) 
+      <%# <% pdf = WickedPdf.new.pdf_from_url(veteran_id)
          save_path = Rails.root.join('pdfs','filename.pdf')
          File.open(save_path,'wb') do |file|
          file << pdf
          end
-      %> 
+      %>
 
       <p class="lead"></p>
     </div>
