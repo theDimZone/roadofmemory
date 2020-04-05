@@ -7,7 +7,7 @@
     <% if @user.socialtype == "vk" %>
       <a href="https://vk.com/id<%= @user.socialid %>"><%= @user.name %></a>
     <% elsif @user.socialtype == "od" %>
-      ....
+      <a href="https://ok.ru/profile/id<%= @user.socialid %>"><%= @user.name %></a>
     <% end %>
     <br>
     <a class="">Накопленные баллы :</a>
