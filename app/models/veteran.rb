@@ -10,7 +10,7 @@ class Veteran < ApplicationRecord
     medium: '300x300>'
   },
   :url  => ":s3_eu_url",
-  :path => "/:class/photos/:id_:basename.:style.:extension"
+  :path => "/:class/photos/000/000/:id/original/:basename.:extension"
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
