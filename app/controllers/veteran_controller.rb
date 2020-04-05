@@ -10,6 +10,7 @@ class VeteranController < ApplicationController
   def new
     redirect_to :controller => 'login', :action => 'index' if !is_authored or !check_auth
 
+    @troops = Troop.all
     @veteran = Veteran.new
   end
 
@@ -19,6 +20,7 @@ class VeteranController < ApplicationController
 
     veteran_params[:user] = User.find(get_user[:id])
     veteran_params[:moderated] = true
+    veteran_params[:troop] = Troop.find(params[:troop_id]) unless params[:troop_id].nil?
     @veteran = Veteran.new(veteran_params)
 
     if @veteran.save

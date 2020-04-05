@@ -47,6 +47,15 @@
     </div>
     <div class="row">
       <div class="col">
+        <h2>Войско:</h2>
+      </div>
+      <div class="col">
+        <%= f.select :troop_id, @troops.collect { |p| [ p.name, p.id ] }, include_blank: true %>
+        <!--<input class="form-control mr-sm-2" type="text" placeholder="Иванович" aria-label="surname" >-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
           <%= f.submit 'Отправить' %>
       </div>
     </div>
