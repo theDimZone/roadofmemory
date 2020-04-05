@@ -26,11 +26,13 @@
     <div class="col">
     </div>
     <div class="col bg-light m-1 p-1">
-      <% @troop.veterans.each_with_index do |veteran, i| %>
-        <%= link_to veteran.lastname + " " + veteran.name + " " + veteran.surname, controller: "veteran", action: "show", id: veteran.id %>
-        <% if i != @troop.veterans.count - 1 %>  <br>
+      <% @allreferencetroops.each_with_index do |troop, i| %>
+        <% troop.veterans.each do |veteran| %>
+          <%= link_to veteran.lastname + " " + veteran.name + " " + veteran.surname, controller: "veteran", action: "show", id: veteran.id %>
+          <% if i != @troop.descendants.count - 1 %>  <br> <% end %>
         <% end %>
       <% end %>
+
       <br>
     </div>
     <div class="col bg-light m-1 p-1">

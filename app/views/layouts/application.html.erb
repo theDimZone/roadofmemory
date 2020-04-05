@@ -7,6 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if controller_name == "login" %>
+      <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+      <script type="text/javascript">
+        VK.init({apiId: 7391635});
+      </script>
+
+      <script type="text/javascript" src="http://api.odnoklassniki.ru"></script>
+      <script type="text/javascript">
+        OD.init({apiId: 512000514101});
+        document.location.reload(true);
+      </script>
+    <% end %>
   </head>
 
   <body>
