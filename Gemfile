@@ -34,6 +34,10 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'omniauth'
 gem 'omniauth-odnoklassniki'
 
+gem 'wicked_pdf'
+
+gem 'wkhtmltopdf-binary'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

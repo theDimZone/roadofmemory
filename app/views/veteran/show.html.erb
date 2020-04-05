@@ -47,6 +47,13 @@ extra_css: "product.css"
   <div class="bg-secondary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
     <div class="my-3 py-3">
       <h2 class="display-5">Медали и награды</h2>
+      <%# <% pdf = WickedPdf.new.pdf_from_url(veteran_id) 
+         save_path = Rails.root.join('pdfs','filename.pdf')
+         File.open(save_path,'wb') do |file|
+         file << pdf
+         end
+      %> 
+
       <p class="lead"></p>
     </div>
     <div class="bg-light shadow-sm mx-auto" style="width: 100%; height: 300px; border-radius: 21px 21px 0 0;"></div>
