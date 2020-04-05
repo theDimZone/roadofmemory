@@ -17,7 +17,7 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'mini_racer', platforms: :ruby
 
 gem 'ancestry'
-gem 'paperclip'
+gem 'paperclip','= 6.0.0'
 gem 'aws-sdk', '~> 2.3'
 
 # Use CoffeeScript for .coffee assets and views
