@@ -1,5 +1,5 @@
-class V1::BaseController < V1::ApiController
-    def index 
+class BaseController < V1::ApiController
+    def index
         respond_to do |format|
             format.pdf do
                 @html  = get_html
