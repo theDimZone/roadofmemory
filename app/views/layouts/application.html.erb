@@ -43,7 +43,7 @@
             <% end %>
           </div>
           <div class="col-md-1">
-            <% if is_authored and is_cookie_valid_vk %>
+            <% if is_authored and check_auth %>
               <%= User.find(get_user[:id]).score %>
             <% end %>
           </div>
