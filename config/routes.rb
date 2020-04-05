@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'card/:id', to: 'card#show'
 
   get '/user/:id', to: 'user#show'
+  get '/signout', to: 'user#signout'
 
   get '/search', to: 'search#index'
   get '/search/', to: 'search#results'
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   get '/login/get_token/', to: 'login#get_token'
 
   get '/', to: 'index#index'
+  get '/:id', to: 'index#index'
 
   get '/veteran/new', to: 'veteran#new'
   post '/veteran/create', to: 'veteran#create'

@@ -1,24 +1,16 @@
 class UserController < ApplicationController
-  def index
-    @users = User.all
-  end
-
   def show
     @user = User.find(params[:id])
   end
 
+  def signout
+    cookies.permanent[:hash] = ""
+    cookies.permanent[:id] = ""
+    cookies.permanent[:socialid] = ""
+    cookies.permanent[:socialtype] = ""
+    cookies.permanent[:name] = ""
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(veteran_params)
-    if @user.save
-      redirect_to @user
-    else
-      render :new
-    end
+    redirect_to :controller => 'index', :action => 'index'
   end
 
   private def veteran_params

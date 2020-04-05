@@ -10,19 +10,44 @@
       ....
     <% end %>
     <br>
-    <a class="">Накопленные баллы :</a>
-    <a><%= @user.score %></a>
+    <% if get_user[:id] == @user.id %>
+      Поделиться с друзьми: <%= link_to request.host + "/" + @user.id.to_s, controller: "index", action: "index", id: @user.id %><br>
+      <a class="">Накопленные баллы :</a>
+      <a><%= @user.score %></a>
+    <% end %>
     </br>
   </div>
   <div class="class=col">
-  <a class="m-3 p-3">Приглашенные друзья:</a>
+  <% if get_user[:id] == @user.id %>
+    <a class="m-3 p-3">Приглашенные друзья:</a>
 
-  <div class="m-3 p-3">
-    <% @user.children.each do |user| %>
-      <%= link_to user.name, controller: "user", action: "show", id: user.id %>
+    <div class="m-3 p-3">
+      <% @user.children.each do |user| %>
+        <%= link_to user.name, controller: "user", action: "show", id: user.id %>
+        <% if user.veterans.where(moderated: true).first.nil? %>
+          Еще не отправил ни одного фото
+        <% else %>
+          Сделал свой вклад. Получено 50 баллов
+        <% end %>
+      <% end %>
+    </div>
+
+    <%= link_to "Выйти из аккаунта", controller: "user", action: "signout" %>
+  <% end %>
+  </div>
+
+  <% unless @user.veterans.first.nil? %>
+  <div class="class=col">
+    <a class="m-3 p-3">Сделал вклад в данные материалы:</a>
+
+    <div class="m-3 p-3">
+      <% @user.veterans.each do |veteran| %>
+        <%= link_to veteran.lastname + " " + veteran.name + " " + veteran.surname, controller: "veteran", action: "show", id: veteran.id %>
+      <% end %>
+    </div>
+
+    <%= link_to "Выйти из аккаунта", controller: "user", action: "signout" %>
+  </div>
     <% end %>
-  </div>
-
-  </div>
 </div>
 </div>
