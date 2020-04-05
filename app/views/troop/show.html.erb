@@ -15,9 +15,11 @@
     <div class="col bg-info  m-1 p-1">
       <a class="text-white ">Состав <%= @troop.trooptype %> </a>
     </div>
-    <div class="col bg-info  m-1 p-1">
-      <a class="text-white ">Входит в состав</a>
-    </div>
+    <% unless @troop.parent.nil? %>
+      <div class="col bg-info  m-1 p-1">
+        <a class="text-white ">Входит в состав</a>
+      </div>
+    <% end %>
   </div>
   <div class="row py-3">
     <div class="col bg-light">
@@ -43,11 +45,11 @@
         <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
       <% end %>
     </div>
-    <div class="col bg-light m-1 p-1">
-      <% @troop.children.each do |troop| %>
-        <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
+      <% unless @troop.parent.nil? %>
+        <div class="col bg-light m-1 p-1">
+          <%= link_to @troop.parent.name, controller: "troop", action: "show", id: @troop.parent.id %><br>
+        </div>
       <% end %>
-    </div>
   </div>
 
 </div>
