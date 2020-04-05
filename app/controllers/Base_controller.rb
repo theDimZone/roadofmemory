@@ -1,4 +1,4 @@
-class BaseController < V1::ApiController
+class BaseController < ApiController
     def index
         respond_to do |format|
             format.pdf do
@@ -12,7 +12,7 @@ class BaseController < V1::ApiController
     def get_html
         ActionController::Base.new.render_to_string(template: 'vi/profile/reportes.pdf.erb',
                                                     orientation: 'Landscape',
-                                                    page_saze: 'Letter'
+                                                    page_saze: 'Letter',
                                                     background: true
                                                    )
     end
