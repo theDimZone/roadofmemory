@@ -11,11 +11,9 @@ extra_css: "product.css"
 
 <div class="row marg-veteran bg-light p-md-5 m-md-3">
    <div class="col">
-    <%if @veteran.photo_url == nil%>
+    <% if @veteran.photo_url == nil %>
      <img src = "/assets/1.png" width = "300">
-    <%else%>
-    <%=@veteran.photo_url%>
-    <%end%>
+    <% end %>
    </div>
    <div class="col">
      <br><h2>Имя</h2></br>
