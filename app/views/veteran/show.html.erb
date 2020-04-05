@@ -3,7 +3,11 @@
     <% if @veteran.photo == nil %>
       <img src="/assets/1.png" width="300">
     <% else %>
+<<<<<<< HEAD
       <%= image_tag @veteran.photo.url(:square) %>
+=======
+     <img src="<%= @veteran.photo.url(:square) %>">
+>>>>>>> b01246aa109157ed4c0007908f6662e5ee992253
     <% end %>
   </div>
   <div class="col">
