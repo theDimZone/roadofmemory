@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2020_04_05_064118) do
     t.boolean "moderated"
     t.string "photo_file_name"
     t.string "photo_content_type"
-    t.bigint "photo_file_size"
+    t.integer "photo_file_size"
     t.datetime "photo_updated_at"
   end
 
