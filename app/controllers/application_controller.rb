@@ -14,6 +14,19 @@ class ApplicationController < ActionController::Base
     return md5 == cookies[:hash]
   end
 
+  def is_cookie_valid_od
+    #конфиг пока здесь..
+    app_id = "512000514101"
+    user_id = cookies[:socialid]
+    secret_key = "80A7EECA8C66F332C9D5680D"
+    public_key = "CGDJNMJGDIHBABABA"
+    url_callback = 'http://example.com/oauth/ok.php'
+
+    md5 = Digest::MD5.hexdigest(app_id + user_id + secret_key)
+
+    return md5 == cookies[:hash]
+  end
+
   def is_authored
     return get_user[:id] != nil
   end
@@ -26,6 +39,8 @@ class ApplicationController < ActionController::Base
 
     if cookies[:socialtype] == "vk"
       return is_cookie_valid_vk
+    elsif cookies[:socialtype] == "od"
+      return is_cookie_valid_od
     else
       return false
     end
