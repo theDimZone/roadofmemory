@@ -10,6 +10,7 @@ class LoginController < ApplicationController
     userid = params[:uid]
     name = params[:first_name] + " " + params[:last_name]
 
+    create_params = Hash.new
     create_params[:name] = name
     create_params[:score] = 0
     create_params[:user_id] = cookies[:ref_id] unless cookies[:ref_id].nil?
