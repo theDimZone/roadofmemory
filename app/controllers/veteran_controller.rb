@@ -22,8 +22,8 @@ class VeteranController < ApplicationController
     veteran_params[:user] = User.find(get_user[:id])
     veteran_params[:moderated] = true
 
-    unless params[:id].nil?
-      @veteran = Troop.find(params[:id]).veterans.new(veteran_params)
+    unless troop_params[:id].nil?
+      @veteran = Troop.find(troop_params[:id]).veterans.new(veteran_params)
     else
       @veteran = Veteran.new(veteran_params)
     end
@@ -41,6 +41,10 @@ private
 
   def veteran_params
     params.require(:veteran).permit(:photo, :name, :surname, :lastname, :description, :photo_file_name)
+  end
+
+  def troop_params
+    params.require(:veteran).permit(:id)
   end
 
 end
