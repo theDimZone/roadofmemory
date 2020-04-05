@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-#TroopVeteran.destroy_all
-#UserVeteran.destroy_all
-#Veteran.destroy_all
-#User.destroy_all
-#Troop.destroy_all
+TroopVeteran.destroy_all
+UserVeteran.destroy_all
+Veteran.destroy_all
+User.destroy_all
+Troop.destroy_all
 
 #ActiveRecord::Base.connection.reset_pk_sequence!('veterans')
 #ActiveRecord::Base.connection.reset_pk_sequence!('troops')
