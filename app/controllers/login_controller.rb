@@ -1,7 +1,7 @@
 class LoginController < ApplicationController
   def index
     if is_authored
-      redirect_to :controller => 'user', :action => 'show', :id => cookies[:id]
+      redirect_to :controller => 'user', :action => 'show', :id => get_user[:id]
     end
   end
 
