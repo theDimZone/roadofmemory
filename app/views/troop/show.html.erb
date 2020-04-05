@@ -1,10 +1,10 @@
 
 <div class="container m-3 p-3   text-left ">
   <div class="row">
-    <div class="col bg-light">
+    <div class="col bg-light p-2">
       <h2><%= @troop.trooptype %>:</h2>
     </div>
-    <div class="col bg-light">
+    <div class="col bg-light p-3 ">
       <a><%= @troop.name %></a>
     </div>
     <div class="col">
@@ -13,7 +13,10 @@
       <a class="text-white ">Ветераны</a>
     </div>
     <div class="col bg-info  m-1 p-1">
-      <a class="text-white ">Состав</a>
+      <a class="text-white ">Состав <%= @troop.trooptype %> </a>
+    </div>
+    <div class="col bg-info  m-1 p-1">
+      <a class="text-white ">Входит в состав</a>
     </div>
   </div>
   <div class="row py-3">
@@ -40,5 +43,11 @@
         <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
       <% end %>
     </div>
+    <div class="col bg-light m-1 p-1">
+      <% @troop.children.each do |troop| %>
+        <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
+      <% end %>
+    </div>
   </div>
+
 </div>

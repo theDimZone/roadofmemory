@@ -1,2 +1,66 @@
-<h1>Score#index</h1>
-<p>Find me in app/views/score/index.html.erb</p>
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">Акции и скидки</h1>
+    <p class="lead text-muted">Тратье свои накопленные баллы и получайте уникальные акции и скидки!</p>
+  </div>
+</section>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+              <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+                <img src="/assets/burger_king.jpg" width="60%" class="center-img">
+              </svg>
+                <div class="card-body">
+                  <p class="card-text"><b>Бесплатный обед</b></p>
+                  <p class="card-text">Получите свой бесплатный обед в "Burger King"</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to "Выбрать", controller: "score", action: "index" %>
+                    </button>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+              <img src="/assets/wot.jpg" width="60%" class="center-img">
+            </svg>
+                <div class="card-body">
+                  <p class="card-text"><b>Скидки в игре World of Tanks</b></p>
+                  <p class="card-text">Позволяет получить скидки на ряд товаров в игре "World of Tanks"</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">
+                      <%= link_to "Выбрать", controller: "score", action: "index" %>
+                    </button>
+                  </div>
+                </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+              <img src="/assets/troika.jpg" width="60%" class="center-img">
+            </svg>
+            <div class="card-body">
+            <p class="card-text"><b>Бесплатные поездки</b></p>
+            <p class="card-text">Позволяет получить бесплатные поездки на транспортную карту</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <button type="button" class="btn btn-sm btn-outline-secondary">
+                <%= link_to "Выбрать", controller: "score", action: "index" %>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
