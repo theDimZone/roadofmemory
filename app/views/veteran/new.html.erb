@@ -1,42 +1,55 @@
-<div class="container m-3 p-3 bg-light ">
-  <div class="row">
-    <div class="col">
-      <h2>Фамилия:</h2>
+<%= form_for :veteran, :url => { :action => "create" }, multipart: true do |f|  %>
+  <div class="container m-3 p-3 bg-light ">
+    <div class="row">
+      <div class="col">
+        <h2>Фамилия:</h2>
+      </div>
+      <div class="col">
+        <%= f.text_field :lastname, :class => 'form-control mr-sm-2', :required => true, :placeholder => "Иванов" %>
+        <!--<input class="form-control mr-sm-2" type="text" placeholder="Иванов" aria-label="lastname">-->
+      </div>
     </div>
-    <div class="col">
-      <input class="form-control mr-sm-2" type="text" placeholder="Иванов" aria-label="lastname">
+    <div class="row">
+      <div class="col">
+        <h2>Имя:</h2>
+      </div>
+      <div class="col">
+        <%= f.text_field :name, :class => 'form-control mr-sm-2', :required => true, :placeholder => "Иван" %>
+        <!--<input class="form-control mr-sm-2" type="text" placeholder="Иван" aria-label="name">-->
+      </div>
     </div>
+    <div class="row">
+      <div class="col">
+        <h2>Отчество:</h2>
+      </div>
+      <div class="col">
+        <%= f.text_field :surname, :class => 'form-control mr-sm-2', :required => true, :placeholder => "Иванович" %>
+        <!--<input class="form-control mr-sm-2" type="text" placeholder="Иванович" aria-label="surname" >-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>Фото:</h2>
+      </div>
+      <div class="col">
+          <%= f.file_field :photo, :class => 'form-control-file', :required => true %>
+        <!--<input type="file" class="form-control-file" id="exampleFormControlFile1">-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>Описание:</h2>
+      </div>
+      <div class="col">
+        <%= f.text_area :description, :class => 'form-control', :rows => "3", :required => false %>
+        <!--<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <%= f.submit 'Отправить' %>
+      </div>
+    </div>
+
   </div>
-  <div class="row">
-    <div class="col">
-      <h2>Имя:</h2>
-    </div>
-    <div class="col">
-      <input class="form-control mr-sm-2" type="text" placeholder="Иван" aria-label="name">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Отчество:</h2>
-    </div>
-    <div class="col">
-      <input class="form-control mr-sm-2" type="text" placeholder="Иванович" aria-label="surname" >
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Фото:</h2>
-    </div>
-    <div class="col">
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Описание:</h2>
-    </div>
-    <div class="col">
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-  </div>
-</div>
+<% end %>

@@ -8,21 +8,30 @@ class VeteranController < ApplicationController
   end
 
   def new
+    redirect_to :controller => 'login', :action => 'index' if !is_authored or !check_auth
+
     @veteran = Veteran.new
   end
 
+
   def create
+    redirect_to :controller => 'login', :action => 'index' if !is_authored or !check_auth
+
+    veteran_params[:user] = User.find(get_user[:id])
+    veteran_params[:moderated] = true
     @veteran = Veteran.new(veteran_params)
+
     if @veteran.save
-      redirect_to @veteran
-    else
-      render :new
+      redirect_to :controller => 'veteran', :action => 'show', :id => @veteran.id
+     else
+      render action: 'new'
     end
   end
 
-  private def veteran_params
-    params.require(:veteran).permit(:name, :surname,
-                                    :lastname, :photo_url,
-                                    :description, :moderated)
+private
+
+  def veteran_params
+    params.require(:veteran).permit(:photo, :name, :surname, :lastname, :description, :photo_file_name)
   end
+
 end
