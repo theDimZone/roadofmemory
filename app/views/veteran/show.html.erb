@@ -14,7 +14,7 @@ extra_css: "product.css"
     <% if @veteran.photo == nil %>
      <img src="/assets/1.png" width="300">
     <% else %>
-     <%= image_tag @veteran.photo.url(:square) %>
+     <img src="<%= @veteran.photo.url(:square) %>">
     <% end %>
    </div>
    <div class="col">
