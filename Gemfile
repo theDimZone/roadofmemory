@@ -35,6 +35,7 @@ gem 'bootstrap', '~> 4.4.1'
 gem 'omniauth'
 gem 'omniauth-odnoklassniki'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
