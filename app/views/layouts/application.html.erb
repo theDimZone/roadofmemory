@@ -26,7 +26,7 @@
     <nav class="site-header sticky-top py-1">
       <div class="container-fluid ">
         <div class="row" height="2em">
-          <div class="col-md-5">
+          <div class="col-md-4">
             <%= link_to(
             {
               :controller => 'score',
@@ -42,7 +42,11 @@
               </svg>
             <% end %>
           </div>
-
+          <div class="col-md-1">
+            <% if is_authored and is_cookie_valid_vk %>
+              <%= User.find(get_user[:id]).score %>
+            <% end %>
+          </div>
           <div class="col-md-5">
             <a class="py-2 d-none d-md-inline-block"
             <%= link_to "Скованные одной целью", controller: "index", action: "index" %>

@@ -4,6 +4,11 @@ class Veteran < ApplicationRecord
   has_many :users, :through => :user_veterans
   has_many :troops, :through => :troop_veterans
 
+  #after_create :scores
+  #def scores
+  #
+  #end
+
   has_attached_file :photo, styles: {
     thumb: '100x100>',
     square: '200x200#',
