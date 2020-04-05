@@ -1,4 +1,11 @@
-all troops:<br>
-<% @troops.each do |troop| %>
-  <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
-<% end %>
+
+<div class="container w-50 m-3 p-3 bg-light mx-auto text-center col-3">
+  <div class="row">
+    <div class="col">
+      all troops:<br>
+      <% @troops.each do |troop| %>
+        <%= link_to troop.name, controller: "troop", action: "show", id: troop.id %><br>
+      <% end %>
+    </div>
+  </div>
+</div>
