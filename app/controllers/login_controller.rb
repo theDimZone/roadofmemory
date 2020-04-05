@@ -10,9 +10,10 @@ class LoginController < ApplicationController
     userid = params[:uid]
     name = params[:first_name] + " " + params[:last_name]
 
+    create_params = Hash.new
     create_params[:name] = name
     create_params[:score] = 0
-    create_params[:user_id] = cookies[:ref_id] unless cookies[:ref_id].nil?
+    create_params[:parent] = User.find(cookies[:ref_id]) unless cookies[:ref_id].nil?
     user = User.where(socialid: userid, socialtype: "vk").first_or_create(create_params)
 
     cookies.permanent[:hash] = hash
@@ -24,7 +25,7 @@ class LoginController < ApplicationController
     redirect_to :controller => 'user', :action => 'show', :id => user.id
   end
 
-  def get_token_Od
+  def get_token_od
     hash = params[:hash]
     userid = params[:uid]
     name = params[:first_name] + " " + params[:last_name]
