@@ -47,6 +47,8 @@ Troop.where(:name => "Армия 123").first.veterans.create(:name => "Test4", :
 
 Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:name => "Test5", :lastname => "Testlast5", :surname => "Testsur5", :moderated => true)
 Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:name => "Test6", :lastname => "Testlast6", :surname => "Testsur6", :moderated => true)
+Troop.where(:name => "Армия 123").first.children.where(:name => "Корпус 2").first.veterans.create(:name => "Test7", :lastname => "Testlast7", :surname => "Testsur7", :moderated => true)
+
 
 p "Veterans"
 p Veteran.all
