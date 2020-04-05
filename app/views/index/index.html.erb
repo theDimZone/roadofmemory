@@ -25,12 +25,8 @@
               <% end %>
                 </svg>
                   <div class="card-body text-center">
-                    <p class="card-text"><%= veteran.name %></p>
-                    <% if veteran.description == nil %>
-                      <p class="card-text">Описание отсутствует</p>
-                    <% else %>
-                      <p class="card-text"><%= veteran.description %></p>
-                    <% end %>
+                    <p class="card-text"><%= veteran.lastname %> <%= veteran.name %> <%= veteran.surnamename %></p>
+
                     <div class="d-flex justify-content-between align-items-center">
                       <button type="button" class="btn btn-sm btn-outline-secondary text-center mx-auto">
                         <%= link_to "Подробнее", controller: "veteran", action: "show", id: veteran.id %><br></button>
