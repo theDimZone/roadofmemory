@@ -18,8 +18,10 @@
           <div class="card mb-4 shadow-sm">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="40" xmlns="http://www.w3.org/2000/svg"
               preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
-              <% if veteran.photo_url == nil %>
-                <img src="/assets/1.png" width="60%" class="center-img">
+              <% if @veteran.photo == nil %>
+               <img src="https://sun9-43.userapi.com/c205528/v205528453/cd1de/hv4Elw-Tlk4.jpg" width="300">
+              <% else %>
+               <img src="<%= @veteran.photo.url(:square) %>" width="200" height="200">
               <% end %>
                 </svg>
                   <div class="card-body">

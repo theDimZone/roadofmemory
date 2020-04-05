@@ -20,7 +20,7 @@ class VeteranController < ApplicationController
 
     veteran_params[:user] = User.find(get_user[:id])
     veteran_params[:moderated] = true
-    veteran_params[:troop] = Troop.find(params[:troop_id]) unless params[:troop_id].nil?
+    veteran_params[:troop] = Troop.find(params[:troop]) unless params[:troop].nil?
     @veteran = Veteran.new(veteran_params)
 
     if @veteran.save
